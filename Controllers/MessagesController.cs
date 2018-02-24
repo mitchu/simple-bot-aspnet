@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.Bot.Connector;
 
+
 namespace SimpleBot
 {
     [BotAuthentication]
@@ -14,6 +15,8 @@ namespace SimpleBot
         [ResponseType(typeof(void))]
         public virtual async Task<HttpResponseMessage> Post([FromBody] Activity activity)
         {
+           
+
             if ( activity != null && activity.Type == ActivityTypes.Message)
             {
                 await HandleActivityAsync(activity);
